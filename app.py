@@ -22,7 +22,8 @@ def result():
     #pickled_model2 = pickle.load(open('bestParam.pkl', 'rb'))
     pickled_model3 = pickle.load(open('bestModel.pkl', 'rb'))
     Y_pred = pickled_model3[0].predict(x)
-    return render_template('index.html', prediction_text='Stroke Predection % : {}'.format(Y_pred))
+    res=Y_pred[0][0]*100/18.80
+    return render_template('index.html', prediction_text='Stroke Predection % : {}'.format(res))
     # for No Stroke Risk
     #if Y_pred[0][0]<=5.50:
      #   return render_template('nonstroke1.html')
