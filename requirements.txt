@@ -10,4 +10,4 @@ imblearn
 numpy
 pandas
 joblib
-pickle
+pickle-mixin
