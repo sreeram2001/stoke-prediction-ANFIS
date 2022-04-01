@@ -35,4 +35,5 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=7385)
+    #app.run(debug=True, port=7385)
+    app.run(debug=True, const port = Process.env.PORT || 3000)
