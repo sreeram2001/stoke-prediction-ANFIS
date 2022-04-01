@@ -24,14 +24,10 @@ def result():
     Y_pred = pickled_model3[0].predict(x)
     res=Y_pred[0][0]
     #return render_template('index.html', prediction_text='Stroke Predection (normalized value) : {}'.format(res))
-    if Y_pred[0][0]<=5.50:
-      return render_template('index.html', prediction_text='Non-Stroke --> Risk Free and chance of getting stroke is less than 25%')
-    elif Y_pred[0][0]>5.50 and Y_pred[0][0]<=9.0:
-      return render_template('index.html', prediction_text='Non-Stroke --> But Take care and chance of getting stroke is less than 50%"')
-    elif Y_pred[0][0]>9.0 and Y_pred[0][0]<=13.10:
-      return render_template('index.html', prediction_text='Stroke --> at Risk , Immedietly consult the doctor  and chance of getting stroke is between 50% and 75%')
+    if Y_pred[0][0]<=9.0:
+      return render_template('index.html', prediction_text='Non-Stroke')
     else: 
-      return render_template('index.html', prediction_text='"Stroke --> at Very Risk!!! , Immedietly consult the doctor  and chance of getting stroke is more than 75%')
+      return render_template('index.html', prediction_text='"Stroke --> at Very Risk!!! , Immedietly consult the doctor')
 
 
 if __name__ == "__main__":
