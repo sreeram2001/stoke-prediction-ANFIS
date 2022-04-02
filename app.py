@@ -17,7 +17,10 @@ def result():
     hypertension = float(request.form['hypertension'])
     heart_disease = float(request.form['heart_disease'])
     age = float(request.form['age'])
-    x = np.array([hypertension, heart_disease, age]).reshape(1, -1)
+    bmi = float(request.form['bmi'])
+    smoking_status = float(request.form['smoking_status'])
+    
+    x = np.array([hypertension, heart_disease, age, bmi, smoking_status]).reshape(1, -1)
     #pickled_model1 = pickle.load(open('model.pkl', 'rb'))
     #pickled_model2 = pickle.load(open('bestParam.pkl', 'rb'))
     pickled_model3 = pickle.load(open('bestModel.pkl', 'rb'))
